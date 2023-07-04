@@ -5,6 +5,9 @@ import ListBoardComponent from './components/ListBoardComponent';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import CreateBoardComponent from './components/CreateBoardComponent';
+import ListCweComponent from './components/ListCweComponent';
+import CreateCweComponent from './components/CreateCweComponent';
+import ReadBoardComponent from './components/ReadBoardComponent'
 
 
 function App() {
@@ -14,9 +17,14 @@ function App() {
                 <HeaderComponent/>
                 <div className="container">
                     <Routes>
-                        <Route path="/" element={<ListBoardComponent />} />
+                        <Route path="/" element={<ListCweComponent />} />
+                        <Route path="/CWE" element={<ListCweComponent />} />
+                        <Route path="/read-CODE/:cwe_id" element={<ReadBoardComponent />} />
                         <Route path="/CODE" element={<ListBoardComponent />} />
-                        <Route path="/create-CODE" element={<CreateBoardComponent/>} />
+                        <Route path="/create-CODE/:cwe_id" element={<CreateBoardComponent/>} />
+                        <Route path="/create-CWE/_create" element={<CreateCweComponent/>} />
+                        <Route path="/CWE/create-CWE" element={<CreateCweComponent/>} />
+                       
                     </Routes>
                 </div>
                 <FooterComponent/>
