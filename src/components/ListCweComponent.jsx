@@ -25,6 +25,10 @@ class CweList extends Component {
         this.props.navigate('/create-CWE/_create');
     }
 
+    boardList() {
+        window.location.href = "/CODE";
+    }
+
     readBoard(cwe_id)
     {
         this.props.navigate(`/read-CODE/${cwe_id}`);
@@ -34,10 +38,12 @@ class CweList extends Component {
     render() {
         return (
             <div>
-                <h2 className="text-center"> CODE LIST </h2>
-                <div className="row">
+                <h2 className="text-center"> CODE Meta Data </h2>
+                <div className="button-container">
                     <button className="btn btn-primary" onClick={this.createBoard}>Input Codes</button>
+                    <button className="btn btn-primary" onClick={this.boardList}>Code Lists</button>
                 </div>
+            
                 <div className="row">
                     <table className = "table table-striped table-bordered">
                         <thead>

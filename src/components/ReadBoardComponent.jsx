@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import BoardService from '../service/BoardService';
-
+import cweService from '../service/CweService';
 const ReadBoardComponent = () => {
     const { cwe_id } = useParams();
     const navigate = useNavigate();
@@ -25,7 +25,37 @@ const ReadBoardComponent = () => {
         navigate(`/create-CODE/${cwe_id}`);
     }
 
-    //const deleteView
+    const deleteView = async () => {
+        if (window.confirm("정말로 글을 삭제하시겠습니까?\n삭제된 글은 복구 할 수 없습니다.")) {
+            try {
+                // First, delete the board
+                const res1 = await BoardService.deleteBoard(cwe_id);
+                console.log("BoardService delete result => " + JSON.stringify(res1));
+                if (res1.status !== 200) {
+                    alert("글 삭제가 실패했습니다.");
+                    return;
+                }
+
+                // Then, delete the CWE
+                const res2 = await cweService.deleteCwe(cwe_id);
+                console.log("cweService delete result => " + JSON.stringify(res2));
+                if (res2.status !== 200) {
+                    alert("글 삭제가 실패했습니다.");
+                    return;
+                }
+
+                // If both deletions are successful, navigate to '/board'
+                navigate('/');
+            } catch (error) {
+                console.log("delete error => " + error);
+                alert("글 삭제 중 오류가 발생했습니다.");
+            }
+        }
+    };
+
+
+
+
 
 
 
@@ -66,6 +96,7 @@ const ReadBoardComponent = () => {
 
                     <button className="btn btn-primary" onClick={goToList} style={{marginLeft:"10px"}}>글 목록으로 이동</button>
                     <button className="btn btn-info" onClick={goToUpdate} style={{marginLeft:"10px"}}>글 수정</button>
+                    <button className="btn btn-danger" onClick={deleteView} style={{marginLeft:"10px"}}>글 삭제</button>
                 </div>
             </div>
         </div>
