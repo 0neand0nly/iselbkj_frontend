@@ -62,8 +62,8 @@ class CweList extends Component {
                             this.state.boards.map(
                                 (CWE, index)=>
                                     <tr key = {index}>
-                                        <td> <a onClick={() => this.readBoard(CWE.cwe_id)}> {CWE.cwe_id} </a> </td>
-                                        <td> <a onClick={() => this.readBoard(CWE.cwe_id)}> {CWE.cwe_name} </a> </td>
+                                        <td> <a  className="link-style" onClick={() => this.readBoard(CWE.cwe_id)}> {CWE.cwe_id} </a> </td>
+                                        <td> <a className="link-style" onClick={() => this.readBoard(CWE.cwe_id)}> {CWE.cwe_name} </a> </td>
                                         <td> {CWE.isSrcidt}</td>
                                         <td> {CWE.isByteidt}</td>
                                         <td> <textarea readOnly value={CWE.report ? CWE.report : "No report available"}></textarea></td>

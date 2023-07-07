@@ -15,3 +15,14 @@ textarea {
 .button-container button {
     margin-right: 10px; /* Add some space between buttons */
 }
+
+
+.link-style {
+    cursor: pointer;
+    color: blue;
+}
+
+.link-style:hover {
+    color: red;
+}
+

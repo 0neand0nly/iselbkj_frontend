@@ -30,7 +30,7 @@ class ListBoardComponent extends Component {
 
     readBoard(cwe_id)
     {
-        this.props.navigate('/read-CODE/${cwe_id}');
+        this.props.navigate(`/read-CODE/${cwe_id}`);
     }
 
     boardList() {
@@ -62,8 +62,8 @@ class ListBoardComponent extends Component {
                             this.state.boards.map(
                                 (CODE, index)=>
                                     <tr key = {index}>
-                                        <td>{CODE.cwe_id}</td>
-                                        <td>{CODE.cwe_name}</td>
+                                        <td> <a className="link-style" onClick={() => this.readBoard(CODE.cwe_id)}> {CODE.cwe_id} </a></td>
+                                        <td> <a className="link-style" onClick={() => this.readBoard(CODE.cwe_id)}> {CODE.cwe_name} </a></td>
                                         <td><textarea readOnly value={CODE.srcGood}></textarea></td>
                                         <td><textarea readOnly value={CODE.srcBad}></textarea></td>
                                         <td><textarea readOnly value={CODE.byteGood}></textarea></td>
