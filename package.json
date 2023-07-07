@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:8080",
+  "proxy": "https://port-0-iselbkj-backend-kvmh2mljph7x12.sel4.cloudtype.app",
   "name": "iselbkj_frontend",
   "version": "0.1.0",
   "private": true,

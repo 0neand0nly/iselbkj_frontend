@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BOARD_URL = "https://web-iselbkj-frontend-kvmh2mljph7x12.sel4.cloudtype.app:8080/CODE";
+const BOARD_URL = "https://web-iselbkj-frontend-kvmh2mljph7x12.sel4.cloudtype.app/CODE";
 
 class BoardService {
     getBoards() {
