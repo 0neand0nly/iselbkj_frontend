@@ -13,7 +13,7 @@ class HeaderComponent extends Component {
             <div>
                 <header>
                     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                        <div><a href="http://localhost:3000/" className="navbar-brand"> BKJ Juliet SATE IV</a></div>
+                        <div><a href="https://web-iselbkj-frontend-kvmh2mljph7x12.sel4.cloudtype.app/" className="navbar-brand"> BKJ Juliet SATE IV</a></div>
                     </nav>
                 </header>
             </div>
