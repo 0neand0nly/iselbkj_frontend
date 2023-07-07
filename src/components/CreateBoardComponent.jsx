@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';  
 import service from '../service/BoardService';
 
 const CreateBoardComponent = () => {
@@ -47,9 +47,9 @@ const CreateBoardComponent = () => {
         const CODE = { ...state };
 
         if (isCreateMode) {
-            service.createBoard(CODE).then(() => navigate('/')).catch(err => console.error(err));
+            service.createBoard(CODE).then(() => navigate('/CODE')).catch(err => console.error(err));
         } else {
-            service.updateBoard(cwe_id, CODE).then(() => navigate('/')).catch(err => console.error(err));
+            service.updateBoard(cwe_id, CODE).then(() => navigate('/CODE')).catch(err => console.error(err));
         }
     };
 
@@ -67,11 +67,11 @@ const CreateBoardComponent = () => {
                         <h3 className="text-center">Input New Code</h3>
                         <div className = "card-body">
                             <form>
-                                <div className = "form-group">
+                                <div className="form-group">
                                     <label> CWE_ID </label>
-                                    <input type="text" placeholder="cwe_id" name="cwe_id" className="form-control"
-                                           value={state.cwe_id} onChange={handleChange}/>
+                                    <input type="text" placeholder="cwe_id" name="cwe_id" className="form-control" value={state.cwe_id} onChange={handleChange}/>
                                 </div>
+
                                 <div className = "form-group">
                                     <label> CWE_NAME </label>
                                     <input type="text" placeholder="cwe_name" name="cwe_name" className="form-control"
@@ -97,9 +97,9 @@ const CreateBoardComponent = () => {
                                     <textarea placeholder="byteBad" name="byteBad" className="form-control"
                                               value={state.byteBad} onChange={handleChange}></textarea>
                                 </div>
+                                <button className="btn btn-danger" onClick={cancel} style={{marginLeft:"10px", float: "right"}}>Cancel</button>
+                                <button className="btn btn-success" onClick={createOrUpdateBoard} style={{marginLeft:"10px", float: "right"}}>Save</button>
 
-                                <button className="btn btn-success" onClick={createOrUpdateBoard}>Save</button>
-                                <button className="btn btn-danger" onClick={cancel} style={{marginLeft:"10px"}}>Cancel</button>
                             </form>
                         </div>
                     </div>

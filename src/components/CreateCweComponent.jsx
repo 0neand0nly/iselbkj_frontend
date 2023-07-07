@@ -84,8 +84,9 @@ const CreateCweComponent = () => {
                                               value={state.temp} onChange={handleChange}></textarea>
                                 </div>
 
-                                <button className="btn btn-success" onClick={createBoard}>Save</button>
-                                <button className="btn btn-danger" onClick={cancel} style={{marginLeft:"10px"}}>Cancel</button>
+                                <button className="btn btn-danger" onClick={cancel} style={{marginLeft:"10px", float: "right"}}>Cancel</button>
+                                <button className="btn btn-success" onClick={createBoard} style={{marginLeft:"10px", float: "right"}}>Save</button>
+
                             </form>
                         </div>
                     </div>

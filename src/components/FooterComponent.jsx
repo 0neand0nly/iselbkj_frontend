@@ -13,7 +13,7 @@ class FooterComponent extends Component {
         return (
             <div>
                 <footer className="footer">
-                    <span className="text-muted"> All rights reseved to @0neand0nly </span>
+                    <span className="text-muted" style={{float: "right"}}> All rights reseved to @0neand0nly </span>
 
                 </footer>
             </div>

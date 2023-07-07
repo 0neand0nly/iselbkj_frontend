@@ -1,0 +1,13 @@
+.row {
+    border: 2px solid #888; /* Change to any color you want */
+    border-radius: 10px;
+    padding: 10px; /* You can adjust this value as needed */
+    margin-bottom: 10px; /* Add some space between form groups */
+}
+
+.tall-textarea {
+    height: 50vh; /* Adjust this value to what works best for you */
+    width: 100%; /* Takes the full width of its container */
+}
+
+
