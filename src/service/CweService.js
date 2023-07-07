@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const CWE_URL = "https://web-iselbkj-frontend-kvmh2mljph7x12.sel4.cloudtype.app/CWE";
+const CWE_URL = "https://port-0-iselbkj-backend-kvmh2mljph7x12.sel4.cloudtype.app/CWE";
 
 class CweService {
     getBoards() {
