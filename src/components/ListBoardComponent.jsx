@@ -14,12 +14,13 @@ class ListBoardComponent extends Component {
 
     componentDidMount() {
         service.getBoards().then((res) => {
+            console.log(res.data); // <-- add this
             const rearrangedData = res.data.map(item => {
                 const { cwe_id, ...rest } = item;
                 return { cwe_id, ...rest };
             });
             console.log(rearrangedData);
-            this.setState({ boards: rearrangedData});
+            this.setState({ boards: rearrangedData });
         });
     }
 
