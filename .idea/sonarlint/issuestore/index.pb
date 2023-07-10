@@ -2,8 +2,6 @@
 ;
 src/App.css,a\a\aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
 A
-public/index.html,f\4\f43ecdf8d666ee908aacce037b4cd72159e4741b
-A
 package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
 K
 src/service/BoardService.js,c\b\cba93ad97bfd8a556fbdb922d148871809326d0b
