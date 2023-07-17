@@ -4,14 +4,22 @@ textarea {
     resize: none;
     border: none;
     overflow: auto;
+    box-sizing: border-box; /* Add this */
 }
+
 
 
 .button-container {
     display: flex; /* Set the container to use flexbox */
-    margin-bottom: 10px ;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
+@media (min-width: 768px) {
+    .button-container {
+        flex-direction: row;
+    }
+}
 .button-container button {
     margin-right: 10px; /* Add some space between buttons */
 }

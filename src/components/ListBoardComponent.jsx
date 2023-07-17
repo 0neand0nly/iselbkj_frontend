@@ -46,6 +46,7 @@ class ListBoardComponent extends Component {
                     <button className="btn btn-primary" onClick={this.boardList}>Code MetaData</button>
                 </div>
                 <div className="row">
+                    <div className="table-responsive">
                     <table className = "table table-striped table-bordered">
                         <thead>
                         <tr>
@@ -73,6 +74,7 @@ class ListBoardComponent extends Component {
                         }
                         </tbody>
                     </table>
+                 </div>
                 </div>
             </div>
         );

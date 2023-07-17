@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import { useNavigate } from 'react-router-dom';
-import service from '../service/CweService';
-import Boardservice from '../service/BoardService';
+import service from '../service/ChunkService';
 import './ListBoardComponent.css';
 
-class CweList extends Component {
+class ChunkList extends Component {
     constructor(props) {
         super(props);
 
@@ -22,26 +21,26 @@ class CweList extends Component {
     }
 
     createBoard() {
-        this.props.navigate('/create-CWE/_create');
+        this.props.navigate('/create-CHUNK/_create');
     }
 
     boardList() {
-        window.location.href = "/CODE";
+        window.location.href = "/";
     }
 
     readBoard(cwe_id)
     {
-        this.props.navigate(`/read-CODE/${cwe_id}`);
+        this.props.navigate(`/read-CHUNK/${cwe_id}`);
     }
 
 
     render() {
         return (
             <div>
-                <h2 className="text-center"> CODE Meta Data </h2>
+                <h2 className="text-center"> CODE Chunk Data </h2>
                 <div className="button-container">
-                    <button className="btn btn-primary" onClick={this.createBoard}>Input Codes</button>
-                    <button className="btn btn-primary" onClick={this.boardList}>Code Lists</button>
+
+                    <button className="btn btn-primary" onClick={this.boardList}>Back To Main</button>
                 </div>
             
                 <div className="row">
@@ -50,25 +49,20 @@ class CweList extends Component {
                         <tr>
                             <th>CWE_ID</th>
                             <th>CWE_NAME</th>
-                            <th>소스단계 검출여부</th>
-                            <th>바이트단계 검출여부</th>
-                            <th>분석</th>
-                            <th>요약</th>
-                            <th>비고</th>
+                            <th>Source Code</th>
+                            <th>Byte Code</th>
                         </tr>
                         </thead>
                         <tbody>
                         {
                             this.state.boards.map(
-                                (CWE, index)=>
+                                (CHUNK, index)=>
                                     <tr key = {index}>
-                                        <td> <a  className="link-style" onClick={() => this.readBoard(CWE.cwe_id)}> {CWE.cwe_id} </a> </td>
-                                        <td> <a className="link-style" onClick={() => this.readBoard(CWE.cwe_id)}> {CWE.cwe_name} </a> </td>
-                                        <td> {CWE.isSrcidt}</td>
-                                        <td> {CWE.isByteidt}</td>
-                                        <td> <textarea readOnly value={CWE.report ? CWE.report : "No report available"}></textarea></td>
-                                        <td> <textarea readOnly value={CWE.conclusion ? CWE.conclusion : "No conclusion available"}></textarea></td>
-                                        <td> <textarea readOnly value={CWE.temp ? CWE.temp : "No additional details"}></textarea></td>
+                                        <td> <a  className="link-style" onClick={() => this.readBoard(CHUNK.cwe_id)}> {CHUNK.cwe_id} </a> </td>
+                                        <td> <a className="link-style" onClick={() => this.readBoard(CHUNK.cwe_id)}> {CHUNK.cwe_name} </a> </td>
+                                        <td> <textarea readOnly value={CHUNK.source_code ? CHUNK.source_code : "No source_code available"}></textarea></td>
+                                        <td> <textarea readOnly value={CHUNK.byte_code ? CHUNK.byte_code : "No byte_code available"}></textarea></td>
+                                        
                                     </tr>
                             )
                         }
@@ -80,9 +74,9 @@ class CweList extends Component {
     }
 }
 
-const ListCweComponent = (props) => {
+const ListChunkComponent = (props) => {
     const navigate = useNavigate();
-    return <CweList {...props} navigate={navigate} />
+    return <ChunkList {...props} navigate={navigate} />
 }
 
-export default ListCweComponent;
+export default ListChunkComponent;

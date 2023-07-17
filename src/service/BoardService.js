@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const BOARD_URL = "https://port-0-iselbkj-backend-kvmh2mljph7x12.sel4.cloudtype.app/CODE";
-
+//const BOARD_URL = "http://localhost:8080/CODE";
 class BoardService {
     getBoards() {
         return axios.get(BOARD_URL);
