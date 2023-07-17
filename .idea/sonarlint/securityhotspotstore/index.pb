@@ -7,8 +7,6 @@ K
 src/service/BoardService.js,c\b\cba93ad97bfd8a556fbdb922d148871809326d0b
 R
 "src/components/HeaderComponent.jsx,2\0\2092316e9694fb605146a379ecdf3c624ef88cdf
-A
-public/index.html,f\4\f43ecdf8d666ee908aacce037b4cd72159e4741b
 <
 package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 <
